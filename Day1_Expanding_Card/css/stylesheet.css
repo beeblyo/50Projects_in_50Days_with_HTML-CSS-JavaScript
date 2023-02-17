@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+    /* vertically */
+    align-items: center;
+    /* horizontally */
+    justify-content: center; 
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    width: 90vw;
+}
+
+.panel{
+    position:relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    height:80vh;
+    margin:10px;
+    border-radius: 30px;
+    color:white;
+    cursor:pointer;
+    flex:0.5;
+
+    transition: flex 700ms ease-in;
+}
+
+.panel h3{
+    position: absolute;
+    font-size: 48px;
+    
+    bottom: 10px;
+    left:10px;
+    margin:0;
+    opacity: 0;;
+}
+
+.panel.active{
+    flex:5;
+}
+
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.4s ease-in;
+}
+
+/* media Queary 최대 width가 480px이하일때 {}안의 스타일을 적용 */
+/* 작은 화면에서 볼 떄, 컨테이너 width를 높이고 4,5번째 페널을 안보이게 처리 */
+@media(max-width:480px) {
+    .container{
+        width: 100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display:none;
+    }
+}
