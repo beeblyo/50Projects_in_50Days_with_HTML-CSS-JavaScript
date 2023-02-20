@@ -19,6 +19,12 @@ body{
     background-color: white;
     font-family: 'Roboto', sans-serif; 
     color: rgb(237, 237, 237); font-size: 24pt; font-weight: 600;
+
+    /* 글씨 드래그 안되게 설정 */
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none
 }
 
 .container{
